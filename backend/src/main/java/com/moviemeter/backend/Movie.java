@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 import java.util.List;
 
 @Document(collection = "movies")
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Movie {
@@ -27,13 +27,67 @@ public class Movie {
     @DocumentReference
     private List<Review> reviews;
 
-    public Movie(String imdbId, String title, String releaseDate, String trailerLink, String poster, List<String> backdrops, List<String> genres) {
+
+    public String getImdbId() {
+        return imdbId;
+    }
+
+    public void setImdbId(String imdbId) {
         this.imdbId = imdbId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public String getTrailerLink() {
+        return trailerLink;
+    }
+
+    public void setTrailerLink(String trailerLink) {
         this.trailerLink = trailerLink;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
         this.poster = poster;
+    }
+
+    public List<String> getBackdrops() {
+        return backdrops;
+    }
+
+    public void setBackdrops(List<String> backdrops) {
         this.backdrops = backdrops;
+    }
+
+    public List<String> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<String> genres) {
         this.genres = genres;
+    }
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }
