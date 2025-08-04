@@ -15,7 +15,7 @@ const Trailer = () => {
                 <ReactPlayer
                     controls={true}  // ✅ correct boolean prop
                     //playing={true}
-                    url={`https://www.youtube.com/watch?v=${key}`}
+                    src={`https://www.youtube.com/watch?v=${key}`}
                     width="100%"
                     height="100%"
                 />

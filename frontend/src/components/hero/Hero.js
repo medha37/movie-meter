@@ -6,7 +6,6 @@ import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
-
 const Hero = ({ movies }) => {
 
     const navigate = useNavigate();
@@ -26,7 +25,8 @@ const Hero = ({ movies }) => {
                                     <div className="movie-card" style={{ "--img": `url(${movie.backdrops[0]})` }}>
                                         <div className="movie-detail">
                                             <div className="movie-poster">
-                                                <img src={movie.poster} alt="" />
+                                                <img src={movie.poster} alt="testing" />
+                                                <p className="movie-title2">this is for movie</p>
                                             </div>
                                             <div className="movie-title">
                                                 <h4>{movie.title}</h4>
@@ -57,3 +57,4 @@ const Hero = ({ movies }) => {
 }
 
 export default Hero
+
