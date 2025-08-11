@@ -18,20 +18,45 @@ const WatchList = ({ user }) => {
                 );
 
                 setMovies(movieData.map(m => m.data));
+                setLoading(false); // ✅ mark loading as complete
             } catch (err) {
                 console.error(err);
+                setLoading(false); // even on error, stop loading
             }
         };
 
-        fetchWatchlist();
-    }, []);
+        if (user) {
+            fetchWatchlist();
+        } else {
+            setLoading(false); // user not logged in, stop loading
+        }
+    }, [user]);
+
+    // useEffect(() => {
+    //     const fetchWatchlist = async () => {
+    //         try {
+    //             const res = await getWatchList();
+    //             const imdbIds = res.data;
+
+    //             const movieData = await Promise.all(
+    //                 imdbIds.map(id => api.get(`/api/v1/movies/${id}`))
+    //             );
+
+    //             setMovies(movieData.map(m => m.data));
+    //         } catch (err) {
+    //             console.error(err);
+    //         }
+    //     };
+
+    //     fetchWatchlist();
+    // }, []);
 
     if (!user) {
         return <div className="watchlist-container"><h2>Please login to view your Watchlist.</h2></div>;
     }
 
     if (loading) {
-        return <div className="watchlist-container"><h2>Loading your Watchlist...</h2></div>;
+        return <div className="watchlist-container"><h2>Hey! {user} Welcome to your Watchlist...</h2></div>;
     }
 
     return (

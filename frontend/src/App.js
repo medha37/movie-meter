@@ -67,7 +67,7 @@ function App() {
               />
             }
           />
-          <Route path="/watchList" element={<WatchList />} />
+          <Route path="/watchList" element={<WatchList user={user} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />

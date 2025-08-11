@@ -8,6 +8,7 @@
     border: 1px solid gold;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 
 .movie-poster>img {
@@ -70,15 +71,23 @@
     color: white;
 }
 
-.movie-watchlist-button-container {
-    margin-left: 1rem;
+.watchlist-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 5;
 }
 
-.movie-watchlist-button-container button:hover {
-    background-color: gold;
-    color: black;
-    font-weight: bold;
-}
+/* .movie-poster {
+    position: relative;
+} */
 
 @media only screen and (max-width: 800px) {
     .movie-detail {
